@@ -27,7 +27,7 @@ export class ProductResolver implements Resolve<ProductResolved> {
     .pipe(
       map(product => ({product: product})),
       catchError(error => {
-        const message = `Retrieval Error: $(error)`;
+        const message = `Retrieval Error: ${error}`;
         console.error(message);
         return of({product: null, error: message});
       })
