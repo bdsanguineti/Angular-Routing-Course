@@ -12,7 +12,8 @@ export interface Product {
   imageUrl: string;
 }
 
+// Second Interface with two properties
 export interface ProductResolved {
   product: Product;
-  error?: any;
+  error?: any; // Optional Error.
 }
