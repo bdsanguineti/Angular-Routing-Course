@@ -4,13 +4,33 @@
   </div>
 
   <div class="card-body"
-       *ngIf="product">
+        *ngIf="product">
     <div class="wizard">  <!-- Adding Tabs  -->
       <a>Basic Information</a>
       <a>Search Tags</a>
     </div>
 
     <router-outlet></router-outlet>  <!-- Router Child location  -->
+    <!-- <div class="row mb-2">
+      <button class="btn btn-primary mr-3"
+              style="width:80px"
+              type="button"
+              title="Save your entered data"
+              (click)="saveProduct()">
+      </button>
+      <button class="btn btn-outline-secondary mr-3"
+              style="width:80px"
+              type="button"
+              title="Cancel your edits"
+              [routerLink]="['/products']">
+      </button>
+      <button class="btn btn-outline-warning"
+              style="width:80px"
+              type="button"
+              title="Delete this product"
+              (click)="deleteProduct()">
+      </button>
+    </div> -->
   </div>
 </div>
 

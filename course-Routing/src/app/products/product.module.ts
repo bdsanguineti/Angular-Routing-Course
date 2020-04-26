@@ -8,6 +8,7 @@ import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { ProductService } from './product.service';
 import { ProductEditTagsComponent } from './product-edit/product-edit-tags.component';
+import { ProductEditInfoComponent } from './product-edit/product-edit-info.component';
 
 @NgModule({
   imports: [
@@ -24,7 +25,7 @@ import { ProductEditTagsComponent } from './product-edit/product-edit-tags.compo
       resolve: {resolvedData: ProductResolver},
       children: [                                               // Implements Child Route
         { path: '', redirectTo: 'info', pathMatch: 'full' },
-        { path: 'info', component: ProductEditComponent },
+        { path: 'info', component: ProductEditInfoComponent },
         { path: 'tags', component: ProductEditTagsComponent }
       ]
       }
@@ -34,7 +35,7 @@ import { ProductEditTagsComponent } from './product-edit/product-edit-tags.compo
     ProductListComponent,
     ProductDetailComponent,
     ProductEditComponent,
-    ProductEditComponent,
+    ProductEditInfoComponent,
     ProductEditTagsComponent
   ]
 })
