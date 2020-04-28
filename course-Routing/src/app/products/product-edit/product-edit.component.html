@@ -6,10 +6,12 @@
   <div class="card-body"
         *ngIf="product">
     <div class="wizard">  <!-- Adding Tabs  -->
-      <a [routerLink]="['info']">
+      <a [routerLink]="['info']"
+        routerLinkActive="active">  <!-- Adding Styling to selected Routes  -->
         Basic Information
       </a>
-      <a [routerLink]="['tags']">
+      <a [routerLink]="['tags']"
+        routerLinkActive="active">
         Search Tags
       </a>
     </div>
