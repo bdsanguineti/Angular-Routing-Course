@@ -11,6 +11,11 @@ const Rutas = [
 ]
 
 @NgModule({
-  imports: [ RouterModule.forRoot(Rutas) ],
+  imports: [
+    RouterModule.forRoot(
+      Rutas,
+      { enableTracing: true } // F12 Console Utility for Route. Watching Routing Events
+    ),
+  ],
   exports: [ RouterModule ] })
 export class AppRoutingModule { }
