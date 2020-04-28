@@ -11,7 +11,8 @@
     <li class="nav-item">
       <a class="nav-link"
         [routerLink]="['/products']"
-        routerLinkActive="active">
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact : true}"> <!-- Style only IF the route full match -->
         Product List
       </a>
     </li>
