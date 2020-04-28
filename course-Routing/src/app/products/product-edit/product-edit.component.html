@@ -8,11 +8,11 @@
     <div class="wizard">  <!-- Adding Tabs  -->
       <a [routerLink]="['info']"
         routerLinkActive="active">  <!-- Adding Styling to selected Routes  -->
-        Basic Information
+        Basic Information <span [ngClass]="{'fa fa-exclamation': !isValid('info')}"></span> <!-- Danger Icon if Tab has Invalid Field-->
       </a>
       <a [routerLink]="['tags']"
         routerLinkActive="active">
-        Search Tags
+        Search Tags <span [ngClass]="{'fa fa-exclamation': !isValid('tags')}"></span>
       </a>
     </div>
 
