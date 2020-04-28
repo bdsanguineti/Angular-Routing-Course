@@ -15,7 +15,7 @@ import { ProductEditInfoComponent } from './product-edit/product-edit-info.compo
     SharedModule,
     RouterModule.forChild([
       {
-        path: 'products',
+        path: 'products', // Componentless Route
         children: [
           { path: '', component: ProductListComponent },
           {
