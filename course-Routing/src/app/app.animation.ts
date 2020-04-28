@@ -1,7 +1,7 @@
 import { trigger, animate, transition, style, group, query } from '@angular/animations';
 
-export const slideInAnimation = trigger('slideInAnimation', [
-  // Transition between any two states
+export const slideInAnimation = trigger('slideInAnimation', [ // Define a Constant and set it a Name for the animation trigger.
+  // Transition between any two states '* <=> *'
   transition('* <=> *', [
     // Events to apply
     // Defined style and animation function to apply
