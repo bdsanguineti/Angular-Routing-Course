@@ -48,7 +48,14 @@
     </li>
   </ul>
 </nav>
-<div class="container"
-    [@slideInAnimation]="o.isActivated ? o.activatedRoute : ''">  <!-- Specify the directive for our animation -->
-  <router-outlet #o="outlet"></router-outlet> <!-- Adding Animation Reference with #o="outlet" -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-10"
+      [@slideInAnimation]="o.isActivated ? o.activatedRoute : ''">  <!-- Specify the directive for our animation -->
+      <router-outlet #o="outlet"></router-outlet> <!-- Adding Animation Reference with #o="outlet" -->
+    </div>
+    <div class="col-md-2">
+      <router-outlet name="popup"></router-outlet> <!-- Adding a Secondary Router Outlet  -->
+    </div>
+
 </div>
