@@ -8,6 +8,7 @@ import { MessageService } from '../messages/message.service';
 })
 export class AuthService {
   currentUser: User;
+  redirectUrl: string;
 
   get isLoggedIn(): boolean {
     return !!this.currentUser; // Object to boolean. Returns false if the current user property is null or undefined. Otherwise its returns true
