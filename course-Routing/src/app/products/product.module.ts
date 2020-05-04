@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
 import { ProductService } from './product.service';
 import { ProductEditTagsComponent } from './product-edit/product-edit-tags.component';
 import { ProductEditInfoComponent } from './product-edit/product-edit-info.component';
+import { AuthGuard } from '../user/auth.guard';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { ProductEditInfoComponent } from './product-edit/product-edit-info.compo
     RouterModule.forChild([
       {
         path: 'products', // Componentless Route
+        canActivate: [AuthGuard],
         children: [
           { path: '', component: ProductListComponent },
           {

@@ -10,7 +10,7 @@ export class AuthService {
   currentUser: User;
 
   get isLoggedIn(): boolean {
-    return !!this.currentUser;
+    return !!this.currentUser; // Object to boolean. Returns false if the current user property is null or undefined. Otherwise its returns true
   }
 
   constructor(private messageService: MessageService) { }
