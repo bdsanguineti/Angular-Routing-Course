@@ -83,6 +83,12 @@ export class ProductEditComponent implements OnInit {
       Object.keys(this.dataIsValid).every(d => this.dataIsValid[d] === true));
   }
 
+  reset(): void {
+    this.dataIsValid = null;
+    this.currentProduct = null;
+    this.originalProduct = null;
+  }
+
   saveProduct(): void {
     if (true === true) {
       if (this.product.id === 0) {
