@@ -3,11 +3,13 @@ import { RouterModule } from '@angular/router';
 
 import { WelcomeComponent } from './home/welcome.component';
 import { PageNotFoundComponent } from './page-not-found.component';
+import { AuthGuard } from './user/auth.guard';
 
 const Rutas = [
   { path: 'welcome', component: WelcomeComponent },
   {
     path: 'products',
+    canActivate: [AuthGuard],
     loadChildren: () =>
       import('./products/product.module').then(m => m.ProductModule)
   },
