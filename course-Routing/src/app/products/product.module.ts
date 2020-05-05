@@ -9,35 +9,29 @@ import { RouterModule } from '@angular/router';
 import { ProductService } from './product.service';
 import { ProductEditTagsComponent } from './product-edit/product-edit-tags.component';
 import { ProductEditInfoComponent } from './product-edit/product-edit-info.component';
-import { AuthGuard } from '../user/auth.guard';
+// import { AuthGuard } from '../user/auth.guard';
 import { ProductEditGuard } from './product-edit/product-edit.guard';
 
 @NgModule({
   imports: [
     SharedModule,
     RouterModule.forChild([
+      { path: '', component: ProductListComponent },
       {
-        path: 'products', // Componentless Route
-        canActivate: [AuthGuard], // Consider comment this line for debug or adding new features.
-        children: [
-          { path: '', component: ProductListComponent },
-          {
-            path: ':id',
-            component: ProductDetailComponent,
-            resolve: { resolvedData: ProductResolver }
-          },
-          { path: ':id/edit',
-            component: ProductEditComponent,
-            canDeactivate: [ProductEditGuard],
-            resolve: {resolvedData: ProductResolver},
-            children: [                                               // Grouping Routes
-              { path: '', redirectTo: 'info', pathMatch: 'full' },
-              { path: 'info', component: ProductEditInfoComponent },
-              { path: 'tags', component: ProductEditTagsComponent }
-            ]
-          }
-        ]
+        path: ':id',
+        component: ProductDetailComponent,
+        resolve: { resolvedData: ProductResolver }
       },
+      { path: ':id/edit',
+        component: ProductEditComponent,
+        canDeactivate: [ProductEditGuard],
+        resolve: {resolvedData: ProductResolver},
+        children: [                                               // Grouping Routes
+          { path: '', redirectTo: 'info', pathMatch: 'full' },
+          { path: 'info', component: ProductEditInfoComponent },
+          { path: 'tags', component: ProductEditTagsComponent }
+        ]
+      }
     ])
   ],
   declarations: [
