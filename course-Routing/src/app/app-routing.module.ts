@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, PreloadAllModules } from '@angular/router';
 
 import { WelcomeComponent } from './home/welcome.component';
 import { PageNotFoundComponent } from './page-not-found.component';
@@ -9,7 +9,7 @@ const Rutas = [
   { path: 'welcome', component: WelcomeComponent },
   {
     path: 'products',
-    canActivate: [AuthGuard],
+    canActivate: [AuthGuard], // canLoad prevent Preloading Feature. Change canActivate / canLoad if you want to preload Product Module or not.
     loadChildren: () =>
       import('./products/product.module').then(m => m.ProductModule)
   },
@@ -21,7 +21,8 @@ const Rutas = [
   imports: [
     RouterModule.forRoot(
       Rutas,
-      { enableTracing: true } // F12 Console Utility for Route. Watching Routing Events
+      { preloadingStrategy: PreloadAllModules },
+      // { enableTracing: true }  // F12 Console Utility for Route. Watching Routing Events
     ),
   ],
   exports: [ RouterModule ] })
